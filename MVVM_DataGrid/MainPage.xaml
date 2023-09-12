@@ -8,27 +8,27 @@
              >
 
     <Grid>
-        <!--Row Defs-->
+        <!--Row Defs (4)-->
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
-        <!--Col Defs-->
+        <!--Col Defs (2)-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="350" />
         </Grid.ColumnDefinitions>
 
         <!--Heading 1-->
-        <Label TextColor="White" Text="Surf Shop Example" Grid.Column="0" Grid.Row="0" Padding="10" FontSize="Medium"/>
+        <Label TextColor="White" Text="Surfs Up!" Grid.Column="0" Grid.Row="0" Padding="10" FontSize="Medium"/>
 
         <!--Data Grid-->
-        <dg:DataGrid Grid.Column="0" Grid.Row="1" x:Name="ShopView" ItemsSource="{Binding Cataloge}" RowHeight="70" HeaderHeight="50" BorderColor="DarkGrey" 
-             HeaderBackground="DarkGoldenrod">
+        <dg:DataGrid Grid.Column="0" Grid.Row="1" x:Name="ShopView" ItemsSource="{Binding Cataloge}" RowHeight="50" HeaderHeight="50" BorderColor="DarkGrey" 
+             HeaderBackground="SteelBlue">
             <dg:DataGrid.Columns>
-                <dg:DataGridColumn Title="Id" PropertyName="shopID" Width="150">
+                <dg:DataGridColumn Title="Id" PropertyName="shopID" Width="50"><!--ItemsSource.PropertyName = Cataloge.shopID-->
                     <dg:DataGridColumn.CellTemplate>
                         <DataTemplate>
                             <ContentView>
@@ -39,11 +39,11 @@
                         </DataTemplate>
                     </dg:DataGridColumn.CellTemplate>
                 </dg:DataGridColumn>
-                <dg:DataGridColumn Title="Brand" PropertyName="brandName" >
+                <dg:DataGridColumn Title="Brand" PropertyName="brandName" ><!--Cataloge.brandName-->
                     <dg:DataGridColumn.CellTemplate>
                         <DataTemplate >
                             <ContentView>
-                                <Label Text="{Binding ., FallbackValue='Brand Name'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding ., FallbackValue='Missing Brand Name'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
                             </ContentView>
                         </DataTemplate>
                     </dg:DataGridColumn.CellTemplate>
@@ -87,8 +87,8 @@
             </dg:DataGrid.Columns>
             <dg:DataGrid.RowsBackgroundColorPalette>
                 <dg:PaletteCollection>
-                    <Color>white</Color>
-                    <Color>white</Color>
+                    <Color>lightyellow</Color>
+                    <Color>gold</Color>
                 </dg:PaletteCollection>
             </dg:DataGrid.RowsBackgroundColorPalette>
         </dg:DataGrid>
@@ -96,7 +96,7 @@
         <!--Entry For Number Of Items-->
         <HorizontalStackLayout Grid.Column="0" Grid.Row="2">
             <Label Text="Purchase OR Stock"/>
-            <Entry Placeholder="0" TextColor="Black" BackgroundColor="White"/>
+            <Entry x:Name="numberOfItems" Placeholder="0" TextColor="Black" BackgroundColor="White"/>
         </HorizontalStackLayout>
 
         <!--Calc Btn-->
@@ -112,14 +112,14 @@
 
         <!--Reciept OR Stock Report Summary-->
         <VerticalStackLayout Grid.Column="1" Grid.Row="1" Padding="10">
-            <Label Text="Id Placeholder"/>
-            <Label Text="Name Placeholder"/>
-            <Label Text="Type Placeholder"/>
-            <Label Text="2023 Y/N Placeholder"/>
-            <Label Text="Total Quantity Placeholder"/>
-            <Label Text="Cost Price Placeholder"/>
-            <Label Text="Gross After Tax Placeholder"/>
-            <Label Text="Tax Paid Placeholder"/>
+            <Label x:Name="sumID" Text="Id Placeholder"/>
+            <Label x:Name="sumName" Text="Name Placeholder"/>
+            <Label x:Name="sumType" Text="Type Placeholder"/>
+            <Label x:Name="sumYN" Text="2023 Y/N Placeholder"/>
+            <Label x:Name="sumTotalOrder" Text="Total Quantity Placeholder"/>
+            <Label x:Name="sumCostPrice" Text="Cost Price Placeholder"/>
+            <Label x:Name="sumTotal" Text="Total cost"/>
+            <Label Text="Discounts"/>
             <Label Text="Date Placeholder"/>
             <Label Text="Time Placeholder"/>
         </VerticalStackLayout>
@@ -129,7 +129,7 @@
             <Label Text="Records saved yes/no placeholder"/>
         </HorizontalStackLayout>
 
-        <!--Save Payslip Btn-->
+        <!--Save Reciept Btn-->
         <Button Text="Save" 
                 Padding="20"
                 Grid.Column="1"

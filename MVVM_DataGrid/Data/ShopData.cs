@@ -4,6 +4,14 @@ namespace MVVM_DataGrid.Data
 {
     public class ShopData : ObservableObject
     {
+        //public int shopID {get; set;}
+
+        //DATATYPE 
+        //ABILITY to update individual object properties in real FORANY part of the program that uses.
+        //Futureproofing -> object observe notify changes.
+        //THIS HAS MORE VALUE ON OBJECT CLASS WITH BEHAVIOUR OR UNIQUE DATA SET.
+        //Co-ordinates? X,Y Pos, Maps?
+
         private int id;
         public int shopID
         {
