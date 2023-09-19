@@ -13,6 +13,7 @@ public partial class MainPage : ContentPage
 
         //use discard task -> voids the need to await and just loads records
         _ = viewModel.ImportSomeRecords();
+        viewModel.ImportStoreDBRecord();
     }
 
 
@@ -44,4 +45,65 @@ public partial class MainPage : ContentPage
     //    await DisplayAlert("Selection Price",selection.costPrice.ToString(),"OK");
     //}
 }
+
+/*
+ *             <dg:DataGrid.Columns>
+                <dg:DataGridColumn Title="Id" PropertyName="shopID" Width="50"><!--ItemsSource.PropertyName = Cataloge.shopID-->
+                    <dg:DataGridColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <Grid>
+                                    <Label Text="{Binding ., FallbackValue='id'}" FontSize="Medium" TextColor="Black"/>
+                                </Grid>
+                            </ContentView>
+                        </DataTemplate>
+                    </dg:DataGridColumn.CellTemplate>
+                </dg:DataGridColumn>
+                <dg:DataGridColumn Title="Brand" PropertyName="brandName" ><!--Cataloge.brandName-->
+                    <dg:DataGridColumn.CellTemplate>
+                        <DataTemplate >
+                            <ContentView>
+                                <Label Text="{Binding ., FallbackValue='Missing Brand Name'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                            </ContentView>
+                        </DataTemplate>
+                    </dg:DataGridColumn.CellTemplate>
+                </dg:DataGridColumn>
+                <dg:DataGridColumn Title="Item Name" PropertyName="itemName" >
+                    <dg:DataGridColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <Label Text="{Binding ., FallbackValue='Item Name'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                            </ContentView>
+                        </DataTemplate>
+                    </dg:DataGridColumn.CellTemplate>
+                </dg:DataGridColumn>
+                <dg:DataGridColumn Title="In Cataloge" PropertyName="cataType" >
+                    <dg:DataGridColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <Label Text="{Binding ., FallbackValue='In Cataloge'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                            </ContentView>
+                        </DataTemplate>
+                    </dg:DataGridColumn.CellTemplate>
+                </dg:DataGridColumn>
+                <dg:DataGridColumn Title="Price" PropertyName="costPrice" >
+                    <dg:DataGridColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <Label Text="{Binding ., FallbackValue='Cost Price'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                            </ContentView>
+                        </DataTemplate>
+                    </dg:DataGridColumn.CellTemplate>
+                </dg:DataGridColumn>
+                <dg:DataGridColumn Title="2023 Cataloge Item" PropertyName="latestCata" >
+                    <dg:DataGridColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <Label Text="{Binding ., FallbackValue='Latest Cataloge Y/N'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                            </ContentView>
+                        </DataTemplate>
+                    </dg:DataGridColumn.CellTemplate>
+                </dg:DataGridColumn>
+            </dg:DataGrid.Columns>
+ */
 

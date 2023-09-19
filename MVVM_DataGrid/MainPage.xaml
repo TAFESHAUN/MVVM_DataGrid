@@ -25,10 +25,10 @@
         <Label TextColor="White" Text="Surfs Up!" Grid.Column="0" Grid.Row="0" Padding="10" FontSize="Medium"/>
 
         <!--Data Grid-->
-        <dg:DataGrid Grid.Column="0" Grid.Row="1" x:Name="ShopView" ItemsSource="{Binding Cataloge}" RowHeight="50" HeaderHeight="50" BorderColor="DarkGrey" 
+        <dg:DataGrid Grid.Column="0" Grid.Row="1" x:Name="ShopView" ItemsSource="{Binding Cataloge2}" RowHeight="50" HeaderHeight="50" BorderColor="DarkGrey" 
              HeaderBackground="SteelBlue">
             <dg:DataGrid.Columns>
-                <dg:DataGridColumn Title="Id" PropertyName="shopID" Width="50"><!--ItemsSource.PropertyName = Cataloge.shopID-->
+                <dg:DataGridColumn Title="Id" PropertyName="Id" Width="50"><!--ItemsSource.PropertyName = Cataloge.shopID-->
                     <dg:DataGridColumn.CellTemplate>
                         <DataTemplate>
                             <ContentView>
@@ -39,7 +39,7 @@
                         </DataTemplate>
                     </dg:DataGridColumn.CellTemplate>
                 </dg:DataGridColumn>
-                <dg:DataGridColumn Title="Brand" PropertyName="brandName" ><!--Cataloge.brandName-->
+                <dg:DataGridColumn Title="Product" PropertyName="Product" ><!--Cataloge.brandName-->
                     <dg:DataGridColumn.CellTemplate>
                         <DataTemplate >
                             <ContentView>
@@ -48,25 +48,7 @@
                         </DataTemplate>
                     </dg:DataGridColumn.CellTemplate>
                 </dg:DataGridColumn>
-                <dg:DataGridColumn Title="Item Name" PropertyName="itemName" >
-                    <dg:DataGridColumn.CellTemplate>
-                        <DataTemplate>
-                            <ContentView>
-                                <Label Text="{Binding ., FallbackValue='Item Name'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
-                            </ContentView>
-                        </DataTemplate>
-                    </dg:DataGridColumn.CellTemplate>
-                </dg:DataGridColumn>
-                <dg:DataGridColumn Title="In Cataloge" PropertyName="cataType" >
-                    <dg:DataGridColumn.CellTemplate>
-                        <DataTemplate>
-                            <ContentView>
-                                <Label Text="{Binding ., FallbackValue='In Cataloge'}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
-                            </ContentView>
-                        </DataTemplate>
-                    </dg:DataGridColumn.CellTemplate>
-                </dg:DataGridColumn>
-                <dg:DataGridColumn Title="Price" PropertyName="costPrice" >
+                <dg:DataGridColumn Title="Price" PropertyName="Price" >
                     <dg:DataGridColumn.CellTemplate>
                         <DataTemplate>
                             <ContentView>
@@ -75,7 +57,7 @@
                         </DataTemplate>
                     </dg:DataGridColumn.CellTemplate>
                 </dg:DataGridColumn>
-                <dg:DataGridColumn Title="2023 Cataloge Item" PropertyName="latestCata" >
+                <dg:DataGridColumn Title="CALCode" PropertyName="Code" >
                     <dg:DataGridColumn.CellTemplate>
                         <DataTemplate>
                             <ContentView>

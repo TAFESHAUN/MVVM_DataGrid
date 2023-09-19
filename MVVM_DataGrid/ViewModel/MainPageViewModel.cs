@@ -10,13 +10,19 @@ namespace MVVM_DataGrid.ViewModel
 {
     public partial class MainPageViewModel : ObservableObject
     {
+        private Repository _repo = new Repository();
+
         public MainPageViewModel()
         {
             Cataloge = new ObservableCollection<ShopData>();
+            Cataloge2 = new ObservableCollection<Products>();
         }
 
         [ObservableProperty]
         ObservableCollection<ShopData> cataloge = new ObservableCollection<ShopData>();
+
+        [ObservableProperty]
+        ObservableCollection<Products> cataloge2 = new ObservableCollection<Products>();
 
         #region CsvImporter
         [RelayCommand]
@@ -75,5 +81,20 @@ namespace MVVM_DataGrid.ViewModel
         //NAVIGATE -> CALL TASK1 -> TASK1 DONE -> CALL TASK2, NAVIGATE AGAIN
         //TASKS CAN HAPPEN SYMILTANIOUSLY -> WITH EACH OTHER AND KNOW OF EACH OTHER
         //NAVITAGE -> LOGIC CHECK -> DO FUCNTION1 -> CHECK IF DONE -> ANOTHER LOGIC CHECK/TRYCATCH -> DO FUNCTION2 -> ANOTHER CHECK ->NAVIAGATE.
+
+
+        #region DatabaseImport
+        public void ImportStoreDBRecord()
+        {
+            var records = _repo.GetProduct();
+
+            foreach (var record in records)
+            {
+                Cataloge2.Add(record);
+            }
+
+        }
+
+        #endregion
     }
 }
