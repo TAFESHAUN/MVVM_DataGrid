@@ -65,4 +65,10 @@
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Views\DetailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿//using System.Data.SqlClient; -> WPF COMPAT -> Andriod IS NO GO
+
+using Microsoft.Data.SqlClient; // -> MAUI COMPAT
 
 namespace MVVM_DataGrid.Data
 {
@@ -15,7 +17,7 @@ namespace MVVM_DataGrid.Data
             //AZURE
             //_connectionString = "Data Source=mysqlserver1092837465.database.windows.net;Initial Catalog=StoreDb;User ID=azureuser;Password=MyAzure_92;Connect Timeout=60;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
             //cFig.GetType().GetProperty(myDbConnect); //Property Type, XML
-            _connectionString = @"Data Source=DESKTOP-TBL2MHJ;Initial Catalog=StoreDB;Integrated Security=True";// Trust Server Certificate=True";
+            _connectionString = @"Data Source=DESKTOP-TBL2MHJ;Initial Catalog=StoreDB;Integrated Security=True; Trust Server Certificate=True";
         }
         #endregion
 
@@ -27,9 +29,10 @@ namespace MVVM_DataGrid.Data
             //connection.Open();
             //////CRASHED
             //connection.Close();
-            using (var connection = new SqlConnection(_connectionString))
+            //System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection();    
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                using (var command = new SqlCommand("SELECT * FROM Products", connection))
+                using (SqlCommand command = new SqlCommand("SELECT * FROM Products", connection))
                 {
                     connection.Open();
                     var reader = command.ExecuteReader();

@@ -5,8 +5,7 @@
              xmlns:dg="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
              xmlns:ViewModel ="clr-namespace:MVVM_DataGrid.ViewModel"
              x:DataType="ViewModel:MainPageViewModel"
-             >
-
+             Title="Index">
     <Grid>
         <!--Row Defs (4)-->
         <Grid.RowDefinitions>
@@ -96,7 +95,7 @@
         <VerticalStackLayout Grid.Column="1" Grid.Row="1" Padding="10">
             <Label x:Name="sumID" Text="Id Placeholder"/>
             <Label x:Name="sumName" Text="Name Placeholder"/>
-            <Label x:Name="sumType" Text="Type Placeholder"/>
+            <Label x:Name="sumCalcCode" Text="Type Placeholder"/>
             <Label x:Name="sumYN" Text="2023 Y/N Placeholder"/>
             <Label x:Name="sumTotalOrder" Text="Total Quantity Placeholder"/>
             <Label x:Name="sumCostPrice" Text="Cost Price Placeholder"/>
